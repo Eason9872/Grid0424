@@ -1,0 +1,43 @@
+body {
+    font-family: sans-serif;
+    background: #f0f0f0;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  h1 {
+    margin-bottom: 20px;
+  }
+  
+  .container {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+  }
+  
+  .grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 100px);
+    grid-template-rows: repeat(3, 100px);
+    gap: 2px;
+  }
+  
+  .grid-item {
+    width: 100px;
+    height: 100px;
+    background-image: url("Bombardiro_Crocodilo.jpg");
+    background-size: 300px 300px; /* 固定原圖尺寸為 300x300 */
+    background-repeat: no-repeat;
+    border: 1px solid #ccc;
+    box-shadow: 0 1px 5px rgba(0,0,0,0.1);
+  }
+  
+  .original img {
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    border-radius: 6px;
+  }
+  
