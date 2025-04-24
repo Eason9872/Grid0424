@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>九宮格圖片展示</title>
+  <link rel="stylesheet" href="Grid-item.css" />
+</head>
+<body>
+  <h1>九宮格圖片展示</h1>
+  <div class="container">
+    <div class="grid-container" id="grid"></div>
+    <div class="original">
+      <p>原圖</p>
+      <img src="Bombardiro_Crocodilo.jpg" alt="原圖">
+    </div>
+  </div>
+
+  <script>
+    const grid = document.getElementById("grid");
+    const positions = [];
+
+    // 生成 3x3 位置資料 (0~2)
+    for (let row = 0; row < 3; row++) {
+      for (let col = 0; col < 3; col++) {
+        positions.push({ row, col });
+      }
+    }
+
+    // 打亂順序
+    positions.sort(() => Math.random() - 0.5);
+
+    // 插入格子並設定 background-position
+    positions.forEach(pos => {
+      const item = document.createElement("div");
+      item.className = "grid-item";
+      const x = -(pos.col * 100);
+      const y = -(pos.row * 100);
+      item.style.backgroundPosition = `${x}px ${y}px`;
+      grid.appendChild(item);
+    });
+  </script>
+</body>
+</html>
